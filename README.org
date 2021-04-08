@@ -1,0 +1,33 @@
+* Docker build for vrn code
+
+This is intended to work on CPU. Will modify eventually to have CUDA
+support. It's available on DockerHub but you are welcome to build it
+yourself too.
+
+** Setup
+
+*** Dockerhub
+
+#+BEGIN_SRC
+sudo docker pull asjackson/vrn:latest
+#+END_SRC
+
+*** Build docker manually
+
+You will need Git LFS extension to download the models.
+
+#+BEGIN_SRC
+git clone
+cd vrn-docker
+sudo docker build -t vrn .
+#+END_SRC
+
+** Running the container
+
+An example image of Alan Turing is available in the folder ~data~,
+this needs to be bind mounted to ~/data~ in the container. With any
+luck, ~data/turing.jpg.obj~ will be created.
+
+#+BEGIN_SRC
+sudo docker run -v $(pwd)/data:/data:Z vrn /runner/run.sh /data/turing.jpg
+#+END_SRC
