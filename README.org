@@ -34,7 +34,7 @@ this needs to be bind mounted to ~/data~ in the container. With any
 luck, ~data/turing.jpg.obj~ will be created.
 
 #+BEGIN_SRC
-docker run -v $(pwd)/data:/data:Z asjackson:vrn /runner/run.sh /data/turing.jpg
+docker run -v $PWD/data:/data:Z asjackson/vrn /runner/run.sh /data/turing.jpg
 #+END_SRC
 
 The Z suffix changes the SELinux context of the directory so that it can be accessed on systems
