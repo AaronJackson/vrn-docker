@@ -1,5 +1,7 @@
 * Docker build for vrn code
 
+If you've been redirected here from the 3D face reconstruction demo website: Sorry, I turned it off.
+
 This is intended to work on CPU. Will modify eventually to have CUDA
 support. It's available on DockerHub but you are welcome to build it
 yourself too. If you feel like doing this yourself, please feel free to
