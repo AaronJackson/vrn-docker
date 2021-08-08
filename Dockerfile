@@ -40,4 +40,9 @@ RUN git clone https://github.com/1adrianb/thpp.git && \
 
 COPY runner /runner
 
+RUN cd /runner && \
+    wget https://asjackson.s3.fr-par.scw.cloud/vrn/vrn-unguided.t7 && \
+    cd face-alignment && \
+    wget https://asjackson.s3.fr-par.scw.cloud/vrn/2D-FAN-300W.t7
+
 ENTRYPOINT ["/runner/run.sh"]
